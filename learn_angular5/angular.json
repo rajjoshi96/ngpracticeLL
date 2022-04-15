@@ -27,9 +27,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "/Users/rajjoshi/Desktop/practice/learn_angular5/node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "/Users/rajjoshi/Desktop/practice/learn_angular5/node_modules/jquery/dist/jquery.js",
+              "/Users/rajjoshi/Desktop/practice/learn_angular5/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+            ]
           },
           "configurations": {
             "production": {
