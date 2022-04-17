@@ -1,0 +1,10 @@
+.brew-body{
+  border: 1px solid cadetblue ;
+  margin:2px;
+  border-radius: 10px;
+}
+.brew-body >p,h3 {
+  margin: 5px;
+  padding: 2px;
+
+}

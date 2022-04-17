@@ -10,6 +10,19 @@
       </div>
     </div>
   </div>
+
 </div>
+<button class="btn btn-primary" (click)="load_currenncies()">Load data</button>
+<hr>
+<div class="container">
+  <div class="brew-body" *ngFor="let brew of brewerires">
+    <h3 class="mb-0"> Brewery Name: {{brew.name}}</h3>
+    <p>State: {{brew.state }}</p>
+    <p>City: {{brew.city}}</p>
+    <p>Country: {{brew.country}}</p>
+  </div>
+</div>
+
+
 
 <router-outlet></router-outlet>
