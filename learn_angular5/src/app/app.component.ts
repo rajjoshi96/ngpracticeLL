@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { breweries, currencies } from './app.interface';
 @Injectable()
@@ -7,25 +7,28 @@ import { breweries, currencies } from './app.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'learn_angular5';
   currencies: currencies[] = [];
   response:any;
-  brewerires: any;
+  brewerires: breweries[]=[];
+  artists: any;
+  currentBrew:any;
+
   constructor(public http: HttpClient) {
   }
-  load_currenncies(){
-    // this.http.get<any>("https://api.coindesk.com/v1/bpi/currentprice.json").subscribe(data=>{
-    //   alert(JSON.stringify(data));
-    //   //console.log(data);
-    //   this.response = (JSON.stringify(data));
-
-    // })
+  ngOnInit(): void {
     this.http.get("https://api.openbrewerydb.org/breweries").subscribe(data=>{
       //alert(JSON.stringify(data))
-      this.brewerires = data;
+      this.response = data;
     })
+  }
 
-    //"https://api.openbrewerydb.org/breweries"
+
+  showBrewery( item:any){
+    //console.log(e);
+    this.artists = item.name;
+    item.highlight = !item.highlight;
+    this.currentBrew = item;
   }
 }

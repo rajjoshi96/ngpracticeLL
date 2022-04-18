@@ -10,4 +10,10 @@ export interface breweries{
   city: string;
   country:string;
   name:string;
+
+
+  // constructor() {
+  //   this.state = '';
+  //   this.city = const city;
+  // }
 }

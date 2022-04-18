@@ -2,26 +2,28 @@
 <div class="row justify-content-center">
   <div class="card mt-sm-3-col-md-8">
     <div class="card-body">
-      <h3 class="mb-0">Artist Directory</h3>
-      <div class="form-group">
-        <div class="form-label">
-          <input class="form-control mt-2" type="text">
-        </div>
+      <h2 class="mb-0">Brew Directory</h2>
+      <div class="form-group" *ngIf = "artists">
+        <p>{{artists}}</p>
+      </div>
+
+      <div class="form-label" >
+        <input class="form-control mt-2" type="text" [(ngModel)] = "artists">
       </div>
     </div>
   </div>
 
 </div>
-<button class="btn btn-primary" (click)="load_currenncies()">Load data</button>
+
 <hr>
 <div class="container">
-  <div class="brew-body" *ngFor="let brew of brewerires">
-    <h3 class="mb-0"> Brewery Name: {{brew.name}}</h3>
-    <p>State: {{brew.state }}</p>
-    <p>City: {{brew.city}}</p>
-    <p>Country: {{brew.country}}</p>
+  <div class="brew-body" *ngFor="let brew of (response | searchBrew:artists)" (click)="showBrewery(brew); artists=''" [style.backgroundColor]="brew.highlight ? '#EEE': '#FFF'">
+    <app-brews [brew]="brew"></app-brews>
   </div>
 </div>
+
+
+<!-- <app-brewDetails *ngIf="currentBrew" [brew]="currentBrew"></app-brewDetails> -->
 
 
 
